@@ -1,7 +1,7 @@
 # WorkSync: what's happening on my road
 
 **Live app:** `https://tesseract-l8pq.onrender.com`  (open it, nothing to install)
-**Demo video:** `demo.mp4` in this repository, or `PASTE-VIDEO-LINK-HERE`
+**Demo video:** `demo.mp4` in this repository, or `https://drive.google.com/file/d/199rN-bro8FDNDnWatlIc7eZ6Lq-LcwIP/view?usp=drive_link`
 
 WorkSync is a web app for coordinating road works and for letting residents see and report what is happening near them.
 
