@@ -1,0 +1,27 @@
+# Render Blueprint: one web service = the whole site (website + API) at one public address.
+# Needs a plan with a disk to keep data between restarts. For a throwaway demo on the free plan,
+# delete the `disk:` block and set plan: free (data then resets whenever the service restarts).
+services:
+  - type: web
+    name: worksync
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: WORKSYNC_DB
+        value: /data/worksync.db
+      - key: WORKSYNC_BEHIND_PROXY
+        value: "1"
+      # Loads the invented sample works and example complaints on the first start, so judges see something.
+      - key: WORKSYNC_DEMO_SCENARIO
+        value: "13.0617,80.2693"
+      # The one password for every staff account on this site (choose your own; shown to judges in the README).
+      - key: WORKSYNC_STAFF_PASSWORD
+        sync: false
+      # Optional: Google sign-in for residents.
+      - key: WORKSYNC_GOOGLE_CLIENT_ID
+        sync: false
+    disk:
+      name: worksync-data
+      mountPath: /data
+      sizeGB: 1

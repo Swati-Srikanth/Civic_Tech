@@ -1,0 +1,4 @@
+# Exact versions the project was tested with (Python 3.9). Used by the Dockerfile.
+fastapi==0.128.8
+uvicorn[standard]==0.39.0
+pydantic==2.13.5
